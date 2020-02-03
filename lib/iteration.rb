@@ -20,16 +20,16 @@ def find_greater_pair(src)
   # Produce a new Array that contains the larger number of each of the pairs
   # that are in the inner Arrays
   newsrc = []
-  row_index = 0 
-  while row_index < src.count do 
+  row_index = 0
+  while row_index < src.count do
     if src[row_index][0] > src[row_index][1]
       newsrc.append(src[row_index][0])
-    else 
+    else
       newsrc.append(src[row_index][1])
-    end 
+    end
     row_index += 1
-  end 
-  return newsrc 
+  end
+  return newsrc
 end
 
 def total_even_pairs(src)
@@ -40,4 +40,18 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
+  newsrc = []
+  row_index = 0
+  total = 0
+  while row_index < src.count do
+    if src[row_index][0] % 2 == 0 && src[row_index][1] % 2 == 0
+      total += src[row_index][0]
+      total += src[row_index][1]
+      newsrc.append(total)
+    else
+      total = 0
+    end
+    row_index += 1
+  end
+  return newsrc 
 end
